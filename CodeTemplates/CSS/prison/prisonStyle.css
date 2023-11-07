@@ -1,0 +1,16 @@
+body
+{
+    background-color: red;
+}
+#title
+{
+    color: white;
+}
+
+@media only screen and (max-width: 380px) {
+    p{
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+}
+

@@ -1,0 +1,17 @@
+﻿html{
+    font-size: 12px;
+}
+#largeTitle
+{
+    font-size: 50px;
+}
+#allTitles {
+    margin-top: 30vh;
+    font-family: 'Jost', sans-serif;
+    line-height: 0.8;
+}
+#mainSection
+{
+    margin-left: 30vw;
+    margin-right: 30vw;
+}

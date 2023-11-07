@@ -1,0 +1,52 @@
+
+
+@media screen and (min-width: 413px) {
+    .title
+    {
+        font-family: Fjalla One;
+        padding-left: 30px;
+        padding-right: 30px
+    }
+
+    .header
+    {
+        font-family: Cantarell;
+    }
+
+    #left_panel
+    {
+        color: white;
+        width: 40vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100vh;
+        background-color: black;
+
+    }
+
+    #right_panel
+    {
+        float: right;
+        width: 60vw;
+    }
+
+    #landing
+    {
+        display: flex;
+    }
+
+    img
+    {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 412px) {
+    #left
+    {
+        height: 100vh;
+        width: 100vw;
+    }
+}
