@@ -1,0 +1,16 @@
+body {
+    height: 2000px; /* Add enough content to enable scrolling */
+    background-color: black;
+  }
+
+img {
+  width: 45vw;
+  height: 45vh;
+}
+
+#picture {
+  position: fixed;
+  margin-left: 30vw;
+  margin-right: 30vw;
+  margin-top: 20vh;
+  }

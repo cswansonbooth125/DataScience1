@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+<body>
+    <img id='picture' src="mars.png" alt="">
+    <script>
+        const myImage = document.getElementById('picture');
+        window.onscroll = function() {
+
+        const scrollPercentage = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+
+        if (scrollPercentage > 50) {
+            myImage.src = 'letter.png';
+        } else {
+            myImage.src = 'mars.png';
+        }
+
+        };
+    </script>
+</body>
+</html>
