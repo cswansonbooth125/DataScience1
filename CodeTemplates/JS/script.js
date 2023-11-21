@@ -1,12 +1,11 @@
-var onScrollHandler = function() {
-  var image = image.src;
-  var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-  if (scrollTop < 100) {
-     newImageUrl = "mars.jpg"
-  }
-  if (scrollTop > 200) {
-     newImageUrl = "letter.jpg"
-  }
-  image.src = newImageUrl;
+const changingImage = document.getElementById('picture');
+
+window.onscroll = function() {
+  const scrollPercentage = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+
+  if (scrollPercentage > 50) {
+    changingImage.src = 'letter.png';
+  } else {
+    changingImage.src = 'mars.png';
+    }
 };
-object.addEventListener ("scroll", onScrollHandler);
