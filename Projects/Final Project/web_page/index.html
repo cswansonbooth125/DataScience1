@@ -3,15 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant&family=Roboto:wght@500&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
+
 <body>
+    <h1>My Question</h1>
+    <p>
+        What are the most popular music genres and time period according to the Rolling Stones top 500 albums list? 
+    </p>
+
+    <p>
+        How could this help people find new music to listen to?
+    </p>
+
+    <h1>My Data</h1>
+    <p>
+        I used the list of top 500 albums from the Rolling Stones which included the year the album released, the name of the album, the artist, and the genres and subgenres of the album.
+    </p>
+
+    <p>
+        When using .head() function in Pandas:
+        <br>
+        <img src="head-of-dataset.png" alt="head of dataset">
+    </p>
+
+    <p>
+        When using .info() function in Pandas:
+        <br>
+        <img src="info-of-dataset.png" alt="info of dataset">
+    </p>
+    <h1>My Analysis</h1>
+    
     <div>
-        <p>According to The Rolling Stones, the best music was rock made between the 70s and 80s.</p>
+        <p>
+            The most common music genre across the 500 albums was rock music.
+        </p>
+        <p>
+            This tells me that rock music is the most popular genre of music according to the Rolling Stones. This also gives people who are looking to listen to new music a genre they can begin exploring.
+        </p>
     </div>
 
     <div>
-        <p>If you wanted to listen to some new music, you might want to start with rock made during the 70s.</p>
+        <p>
+            The most common ten year time period the albums were released was between 1970-1980.
+        </p>
+        <p>
+            The most popular music according to the Rolling Stones was released between 1970-1980. For people looking to listen to new music, this can narrow their search for new music to stuff that was released during the 70s.
+        </p>
     </div>
+
+    <h1>My Visualizations</h1>
+    <img src="genre-bar-graph.png" alt="genre bar graph">
+    <img src="time-period-histogram.png" alt="time period histogram">
+
+    <h1>My Answer</h1>
+    <p>
+        The most popular music according to the Rolling Stones top 500 is Rock music, and the ten year time period where the most popular music was released was between 1970 and 1980. This could help people find new music because this information gives people a starting place from which to begin exploring new music. I know this because the category in the bar chart I created for each album’s most prevalent genre was rock.  In the histogram I created to see the time period where each of the albums were released, the bars were the highest between 1970-1980 along with the best fit line.
+
+    </p>
 </body>
 </html>

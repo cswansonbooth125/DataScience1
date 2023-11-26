@@ -1,0 +1,29 @@
+body {
+    background-color: #282b30;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 60px;   
+    background-image: linear-gradient(to left, rgb(236, 90, 0),#553c9a );
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;  
+    margin-bottom: auto;
+}
+
+p {
+    margin-left: 12px;
+    margin-right: 12px;
+    font-family: 'Assistant', sans-serif;
+    color: lightgrey;
+}
+
+img {
+    margin-top: 12px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50vw;
+}
