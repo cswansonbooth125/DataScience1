@@ -1,45 +1,70 @@
 const data = [
-    { Genre: "Rock", Count: 300 },
-    { Genre: "Funk / Soul", Count: 50 },
-    { Genre: "Electronic", Count: 50 },
-    { Genre: "Hip Hop", Count: 40 },
-    { Genre: "Jazz", Count: 20 },
-    { Genre: "Folk", Count: 10 },
-    { Genre: "Blues", Count: 10 },
-    { Genre: "Reggae", Count: 5 },
-    { Genre: "Pop", Count: 1 },
-    { Genre: "Classical", Count: 1 },
-    { Genre: "Latin", Count: 1 },
-];
+    { "genre": "Rock", "value": 300 , "image": "genre-images/rocktopster.png"},
+    { "genre": "Funk / Soul", "value": 50, "image": "genre-images/funksoultopster.png" },
+    { "genre": "Electronic", "value": 50, "image": "genre-images/electronictopster.png"  },
+    { "genre": "Hip Hop", "value": 40, "image": "genre-images/hiphoptopster.png" },
+    { "genre": "Jazz", "value": 20, "image": "genre-images/jazztopster.png"},
+    { "genre": "Folk", "value": 10, "image": "genre-images/folktopster.png" },
+    { "genre": "Blues", "value": 10, "image": "genre-images/bluestopster.png" },
+    { "genre": "Reggae", "value": 5, "image": "genre-images/reggaetopster.png" },
+    { "genre": "Pop", "value": 1, "image": "genre-images/poptopster.png" },
+    { "genre": "Classical", "value": 1, "image": "genre-images/classicaltopster.png" },
+    { "genre": "Latin", "value": 1, "image": "genre-images/latintopster.png" },
+  ];
 
-const width = 800;
-const height = 400;
-const margin = { top: 50, bottom: 50, left: 50, right: 50};
+  // Set up the SVG container
+  const svgWidth = 500;
+  const svgHeight = 300;
+  const margin = { top: 20, right: 20, bottom: 50, left: 50 };
 
-const svg = d3.select('#d3-container')
-    .append('svg')
-    .attr('height', height - margin.top - margin.bottom)
-    .attr('width', width - margin.left - margin.right)
-    .attr('viewBox', [0, 0, width, height]);
+  const svg = d3.select("#chart")
+    .append("svg")
+    .attr("width", svgWidth)
+    .attr("height", svgHeight);
 
-const x = d3.scaleBand()
-    .domain(d3.range(data.length))
-    .range([margin.left, width - margin.right])
+  // Create scales
+  const xScale = d3.scaleBand()
+    .domain(data.map(d => d.genre))
+    .range([margin.left, svgWidth - margin.right])
     .padding(0.1);
 
-const y = d3.scaleLinear()
-    .domain([0, 400])
-    .range([height - margin.bottom, margin.top]);
+  const yScale = d3.scaleLinear()
+    .domain([0, d3.max(data, d => d.value)])
+    .range([svgHeight - margin.bottom, margin.top]);
 
-svg
-    .append('g')
-    .attr('fill', 'royalblue')
-    .selectAll('rect')
-    .data(data.sort((a,b) => d3.descending(a.score, b.score)))
-    .join('rect')
-        .attr('x', (d,i) => x(i))
-        .attr('y', (d) => y(d.score))
-        .attr('height', d => y(0) - y(d.score))
-        .attr('width', x.bandwidth());
+  // Create x axis
+  svg.append("g")
+    .attr("transform", `translate(0, ${svgHeight - margin.bottom})`)
+    .call(d3.axisBottom(xScale))
+    .selectAll("text")
+    .attr("transform", "rotate(-45)")
+    .style("text-anchor", "end");
 
-svg.node();
+  // Create y axis
+  svg.append("g")
+    .attr("transform", `translate(${margin.left}, 0)`)
+    .call(d3.axisLeft(yScale));
+
+  // Create bars
+  svg.selectAll("rect")
+    .data(data)
+    .enter()
+    .append("rect")
+    .attr("x", d => xScale(d.genre))
+    .attr("y", d => yScale(d.value))
+    .attr("width", xScale.bandwidth())
+    .attr("height", d => svgHeight - margin.bottom - yScale(d.value))
+    .attr("fill", "steelblue")
+    .on("click", d => showImage(d.image));
+
+  // Function to show image
+  function showImage(imagePath) {
+    // Remove any existing images
+    d3.select("#image-container").selectAll("img").remove();
+
+    // Create and append the image
+    const imageElement = document.createElement("img");
+    imageElement.src = imagePath;
+    imageElement.alt = "Genre Image";
+    document.getElementById("image-container").appendChild(imageElement);
+  }

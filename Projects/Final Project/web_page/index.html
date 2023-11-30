@@ -82,7 +82,12 @@
 
     <h1>My Visualizations</h1>
     <img src="genre-bar-graph.png" alt="genre bar graph">
-    <img src="time-period-histogram.png" alt="time period histogram">
+
+    <div id="chart" style="float: left;"></div>
+    <script src="index.js"></script>
+    <div id="image-container" style="float: left; margin-left: 20px;"></div>
+    
+    <img src="time-period-histogram.png" style="display: block;" alt="time period histogram">
 
     <h1>My Answer</h1>
     <p>
@@ -96,10 +101,6 @@
         });
     </script>
 
-    <div style="text-align: center;">
-        <div id="d3-container">
-            <script src="index.js"></script>
-        </div>
-    </div>
+    
 </body>
 </html>
