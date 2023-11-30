@@ -1,5 +1,7 @@
 body {
     background-color: #282b30;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
 
 h1 {
@@ -27,3 +29,4 @@ img {
     margin-right: auto;
     width: 50vw;
 }
+/*iphone 13*/
