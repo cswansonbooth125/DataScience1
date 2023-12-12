@@ -29,8 +29,18 @@ img {
     margin-right: auto;
     width: 50vw;
 }
-
-reect {
-    fill: steelblue;
-}
 /*iphone 13*/
+
+const data = [
+    { "genre": "Rock", "value": 300 , "image": "genre-images/download.png"},
+    { "genre": "Funk / Soul", "value": 50 },
+    { "genre": "Electronic", "value": 50 },
+    { "genre": "Hip Hop", "value": 40 },
+    { "genre": "Jazz", "value": 20 },
+    { "genre": "Folk", "value": 10 },
+    { "genre": "Blues", "value": 10 },
+    { "genre": "Reggae", "value": 5 },
+    { "genre": "Pop", "value": 1 },
+    { "genre": "Classical", "value": 1 },
+    { "genre": "Latin", "value": 1 },
+  ];
